@@ -7,3 +7,5 @@
   - String::valueOf  -- Character → String
   - collect() is a terminal operation
   - joining() is a static method of Collectors class  --> Joins all elements of stream into a single String
+
+- 2. 
