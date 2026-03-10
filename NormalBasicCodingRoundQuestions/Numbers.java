@@ -1,5 +1,6 @@
 package NormalBasicCodingRoundQuestions;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Numbers {
@@ -27,6 +28,46 @@ public class Numbers {
         // each raised to the power of the total number of digits in the number.
 
         //System.out.print("number is armstrong -- "+isArmStrongNumber(num));
+
+        //GCD  --- Greatest Common Divisor
+        //System.out.println("gcd is===="+gcd(12, 18));
+
+        //lcm -- least common multiple
+        //System.out.println("lcm is ===="+lcm(18, 48));
+
+        //secondHighest
+
+        int [] arr={12,53,77,98,21,55,88};
+        int [] arr1={34};
+        System.out.println("second highest number ---->"+secondHighestWithoutSort(arr1));
+    }
+
+     public static int secondHighest(int[] arr) {
+       Arrays.sort(arr);
+       return arr[arr.length-2];
+    }
+    public static int secondHighestWithoutSort(int[] arr) {
+       int highest=arr[0],secondHighest=-1;
+       for(int i=1;i<arr.length;i++){
+        if(highest<arr[i]){
+            highest=arr[i];
+            secondHighest=highest;
+        }else{
+            secondHighest=arr[i];
+        }
+       }
+       return secondHighest;
+    }
+    public static int lcm(int a, int b) {
+       return (a*b)/gcd(a, b);
+    }
+     public static int gcd(int a, int b) {
+        while (b != 0) {
+            int remainder = a % b;
+            a = b;
+            b = remainder;
+        }
+        return a;
     }
 
     public static int factorial(int num){
