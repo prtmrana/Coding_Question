@@ -1,5 +1,6 @@
 package NormalBasicCodingRoundQuestions;
 
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,6 +13,7 @@ public class StringBasicCodingQuestions {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter a string");
         String str=sc.next();
+        
         //Count Vowels
         //System.out.println("VOWEL COUNT IS---"+vowelCount(str));
 
@@ -19,10 +21,31 @@ public class StringBasicCodingQuestions {
        // System.out.println("string after removing duplicates---"+removeDuplicates(str));
 
        //anagram
-       System.out.println("string is anagram --"+isAnagram("rana","aarne"));
+       //System.out.println("string is anagram --"+isAnagram("rana","aarne"));
+
+       //palindrome
+        System.out.println("string is palindrome --"+isPalindrome(str));
+       //reverse
+       //System.out.println("string after reverse--"+reverse(str));
 
 
     }
+    public static String reverse(String str1){
+        String reverseString="";
+        for(int i=0;i<str1.length();i++){
+            reverseString+=str1.charAt(str1.length()-i-1);
+        }
+        return reverseString;
+
+
+    }
+
+    public static boolean isPalindrome(String str){
+       
+        return str.equals(reverse(str));
+    }
+
+
      public static boolean isAnagram(String str1,String str2){
         if(str1.length()!=str2.length()) return false;
        char[] s1=str1.toCharArray();
