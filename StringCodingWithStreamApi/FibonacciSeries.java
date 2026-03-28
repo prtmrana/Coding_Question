@@ -5,12 +5,18 @@ import java.util.stream.IntStream;
 
 public class FibonacciSeries {
     public static void main(String[] args) {
-         Scanner sc =new Scanner(System.in);
-        System.out.println("enter the number");
-        int num=sc.nextInt();
-
-        IntStream.range(0, num).map(n->fibonacci(n)).forEach(System.out::println);
-
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter the number of Fibonacci terms: ");
+            int num = sc.nextInt();
+            
+            if (num <= 0) {
+                System.out.println("Please enter a positive number");
+                return;
+            }
+            
+            System.out.println("Fibonacci Series:");
+            IntStream.range(0, num).map(n -> fibonacci(n)).forEach(System.out::println);
+        }
     }
 
     static int fibonacci(int n){
